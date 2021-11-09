@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,12 @@ namespace OpenBible_Installer
 
         private void button1_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "wget.exe https://vincentxe.github.io/index.html";
+            process.StartInfo = startInfo;
+            process.Start();
 
         }
     }
